@@ -52,6 +52,9 @@ using namespace chrono;
 #if CONFIG_LIB_DSPC_HAVE_JSONCPP
 using namespace Json;
 #endif
+#if CONFIG_LIB_DSPC_HAVE_NLOHMANN_JSON
+using namespace nlohmann;
+#endif
 #if CONFIG_LIB_DSPC_HAVE_CRYPTOPP
 using namespace CryptoPP;
 #endif
@@ -330,6 +333,13 @@ void jsonPrint(const Value &val)
 {
 	StyledWriter jWriter;
 	cout << endl << jWriter.write(val) << endl;
+}
+#endif
+
+#if CONFIG_LIB_DSPC_HAVE_NLOHMANN_JSON
+bool jKeyFind(const json &val, const string &nameKey)
+{
+	return val.contains(nameKey);
 }
 #endif
 

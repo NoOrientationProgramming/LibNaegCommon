@@ -33,6 +33,9 @@
 #if CONFIG_LIB_DSPC_HAVE_JSONCPP
 #include <jsoncpp/json/json.h>
 #endif
+#if CONFIG_LIB_DSPC_HAVE_NLOHMANN_JSON
+#include <nlohmann/json.hpp>
+#endif
 
 #if CONFIG_LIB_DSPC_HAVE_CRYPTOPP
 #include <cryptopp/secblock.h>
@@ -78,6 +81,9 @@ size_t strReplace(std::string &strIn, const std::string &strFind, const std::str
 #if CONFIG_LIB_DSPC_HAVE_JSONCPP
 bool jKeyFind(const Json::Value &val, const std::string &nameKey);
 void jsonPrint(const Json::Value &val);
+#endif
+#if CONFIG_LIB_DSPC_HAVE_NLOHMANN_JSON
+bool jKeyFind(const nlohmann::json &val, const std::string &nameKey);
 #endif
 
 // Cryptography
