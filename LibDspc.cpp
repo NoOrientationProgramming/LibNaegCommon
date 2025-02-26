@@ -341,6 +341,20 @@ bool jKeyFind(const json &val, const string &nameKey)
 {
 	return val.contains(nameKey);
 }
+
+string jToStr(const json &val)
+{
+	if (val.is_string())
+		return val.get<string>();
+
+	if (val.is_number_integer())
+		return to_string(val.get<int>());
+
+	if (val.is_number_float())
+		return to_string(val.get<double>());
+
+	return "";
+}
 #endif
 
 // Cryptography

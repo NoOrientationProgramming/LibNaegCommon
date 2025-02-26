@@ -84,6 +84,7 @@ void jsonPrint(const Json::Value &val);
 #endif
 #if CONFIG_LIB_DSPC_HAVE_NLOHMANN_JSON
 bool jKeyFind(const nlohmann::json &val, const std::string &nameKey);
+std::string jToStr(const nlohmann::json &val);
 #endif
 
 // Cryptography
