@@ -3,7 +3,7 @@
 
 ## ABSTRACT
 
-Class for executing programs and managing OS processes.
+Class for executing and managing OS processes.
 
 ## LIBRARY
 
