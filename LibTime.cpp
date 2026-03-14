@@ -110,7 +110,7 @@ size_t tpDiffSec(const TimePoint &tpEnd, const TimePoint &tpStart)
 	if (tpStart > tpEnd)
 		return 0;
 
-	return duration_cast<seconds>(tpEnd - tpStart).count();
+	return (size_t)(duration_cast<seconds>(tpEnd - tpStart).count());
 }
 
 size_t tpDiffMs(const TimePoint &tpEnd, const TimePoint &tpStart)
@@ -118,7 +118,7 @@ size_t tpDiffMs(const TimePoint &tpEnd, const TimePoint &tpStart)
 	if (tpStart > tpEnd)
 		return 0;
 
-	return duration_cast<milliseconds>(tpEnd - tpStart).count();
+	return (size_t)(duration_cast<milliseconds>(tpEnd - tpStart).count());
 }
 
 TimePoint utcToCet(const TimePoint &tpUtc)
