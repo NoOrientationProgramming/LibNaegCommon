@@ -96,7 +96,7 @@ string appVersion()
 	if (!pVersEnd)
 		return err;
 
-	size_t len = pVersEnd - pVersStart;
+	size_t len = (size_t)(pVersEnd - pVersStart);
 	return string(pVersStart, len);
 }
 
@@ -238,13 +238,13 @@ size_t hexDumpPrint(char *pBuf, char *pBufEnd,
 		addressAbs += lenPrinted;
 	}
 
-	return pBuf - pBufStart;
+	return (size_t)(pBuf - pBufStart);
 }
 
 string toHexStr(const string &strIn)
 {
 	string strOut;
-	uint8_t ch;
+	char ch;
 
 	strOut.reserve(strIn.size() * 2);
 
