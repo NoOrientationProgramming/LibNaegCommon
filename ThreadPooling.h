@@ -78,7 +78,7 @@ private:
 
 	void poolRequestsProcess();
 	void procsDrive();
-	int32_t idDriverNextGet();
+	size_t idDriverNextGet();
 	size_t numProcessingGet();
 	void procInternalAdd(Processing *pProc);
 

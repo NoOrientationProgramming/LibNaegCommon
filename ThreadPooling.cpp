@@ -218,7 +218,7 @@ void ThreadPooling::poolRequestsProcess()
 {
 	PipeEntry<PoolRequest> entryReq;
 	PoolRequest req;
-	int32_t idDriver;
+	size_t idDriver;
 
 	while (ppPoolRequests.get(entryReq) > 0)
 	{
@@ -227,7 +227,7 @@ void ThreadPooling::poolRequestsProcess()
 		procDbgLog("pool request received");
 
 		if (req.idDriverDesired >= 0 && req.idDriverDesired < mCntInternals)
-			idDriver = req.idDriverDesired;
+			idDriver = (size_t)req.idDriverDesired;
 		else
 			idDriver = idDriverNextGet();
 
@@ -270,11 +270,11 @@ void ThreadPooling::procsDrive()
 	}
 }
 
-int32_t ThreadPooling::idDriverNextGet()
+size_t ThreadPooling::idDriverNextGet()
 {
 	size_t idCurrent = 1;
 	size_t numProcessingCurrent;
-	int32_t idSelected = 0;
+	size_t idSelected = 0;
 	size_t numProcessingSelected =
 			mVecInternals[idSelected]->numProcessingGet();
 
