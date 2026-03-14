@@ -70,7 +70,7 @@ ThreadPooling::ThreadPooling()
 
 /* member functions */
 
-void ThreadPooling::workerCntSet(uint16_t cnt)
+void ThreadPooling::cntWorkerSet(uint16_t cnt)
 {
 	mCntInternals = cnt;
 }

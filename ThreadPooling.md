@@ -10,7 +10,7 @@
 
 ThreadPooling *create();
 
-void workerCntSet(uint16_t cnt);
+void cntWorkerSet(uint16_t cnt);
 void driverCreateSet(FuncDriverPoolCreate pFctDriverCreate);
 static void procAdd(Processing *pProc, int32_t idDriver = -1);
 ```
@@ -19,7 +19,7 @@ static void procAdd(Processing *pProc, int32_t idDriver = -1);
 **ThreadPooling()** is a C++ class designed to manage a pool of threads efficiently, allowing for the parallel execution of processing tasks. The class provides mechanisms to create, manage, and coordinate worker threads that interact with processing objects and handle tasks.
 
 ### Features:
-- **Thread Management**: Configure the number of active worker threads using `workerCntSet()`.
+- **Thread Management**: Configure the number of active worker threads using `cntWorkerSet()`.
 - **Dynamic Task Processing**: Add processing objects to the pool for execution with `procAdd()`.
 - **Extensibility**: Allows customization of the driver creation process through the `driverCreateSet()` function to meet specific requirements.
 - **Safe Interaction**: Utilizes mutex protection mechanisms to synchronize access to shared resources.
@@ -33,7 +33,7 @@ static void procAdd(Processing *pProc, int32_t idDriver = -1);
 - **create()**  
   Allocates a new instance of the **ThreadPooling()** class.
 
-- **workerCntSet(uint16_t cnt)**  
+- **cntWorkerSet(uint16_t cnt)**  
   Sets the number of worker threads in the pool.
 
 - **driverCreateSet(FuncDriverPoolCreate pFctDriverCreate)**  
