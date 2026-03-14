@@ -204,7 +204,7 @@ public:
 
 	KeyUser &operator=(char key)
 	{
-		mPrint = key;
+		mPrint = (unsigned char)key;
 		mIsPrint = true;
 		mIsCtrl = false;
 #if KEY_USER_DEBUG
