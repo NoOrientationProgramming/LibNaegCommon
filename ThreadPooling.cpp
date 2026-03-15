@@ -188,7 +188,7 @@ Success ThreadPooling::shutdown()
 
 		if (mListProcs.size())
 		{
-			procDbgLog("driving not finished");
+			//procDbgLog("driving not finished");
 
 			mStateSd = StInternalSdMain;
 			break;
@@ -224,7 +224,7 @@ void ThreadPooling::poolRequestsProcess()
 	{
 		req = entryReq.particle;
 
-		procDbgLog("pool request received");
+		//procDbgLog("pool request received");
 
 		if (req.idDriverDesired >= 0 && req.idDriverDesired < mCntInternals)
 			idDriver = (size_t)req.idDriverDesired;
@@ -258,7 +258,8 @@ void ThreadPooling::procsDrive()
 			continue;
 		}
 
-		procDbgLog("finished driving process %p", pProc);
+		//procDbgLog("finished driving process %p", pProc);
+
 		{
 			Guard lock(mMtxBrokerInternal);
 			--mNumProcessing;
@@ -314,7 +315,7 @@ void ThreadPooling::procAdd(Processing *pProc, int32_t idDriver)
 	req.pProc = pProc;
 	req.idDriverDesired = idDriver;
 
-	dbgLog("adding proc %p to queue", pProc);
+	//dbgLog("adding proc %p to queue", pProc);
 	ppPoolRequests.commit(req);
 }
 
