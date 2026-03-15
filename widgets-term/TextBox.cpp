@@ -155,7 +155,7 @@ void TextBox::currentSet(const string &str)
 	mIdxBack = mIdxFront.size();
 }
 
-void TextBox::ustrWorkSet(const std::u32string &ustr)
+void TextBox::ustrWorkSet(const u32string &ustr)
 {
 	mUstrWork = ustr;
 

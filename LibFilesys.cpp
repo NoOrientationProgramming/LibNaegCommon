@@ -271,8 +271,8 @@ bool fileNonBlockingSet(int fd)
 
 bool fileCopy(const string &pathSrc, const string &pathDst)
 {
-	ifstream src(pathSrc, std::ios::binary);
-	ofstream dst(pathDst, std::ios::binary);
+	ifstream src(pathSrc, ios::binary);
+	ofstream dst(pathDst, ios::binary);
 
 	if (!src || !dst)
 		return false;
