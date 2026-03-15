@@ -101,6 +101,8 @@ private:
 	/* static functions */
 
 	/* static variables */
+	static std::mutex mtxBroker;
+	static bool brokerPresent;
 	static Pipe<PoolRequest> ppPoolRequests;
 
 	/* constants */

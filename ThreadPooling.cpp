@@ -53,6 +53,8 @@ dProcessStateStr(SdState);
 
 using namespace std;
 
+mutex ThreadPooling::mtxBroker;
+bool ThreadPooling::brokerPresent = false;
 Pipe<PoolRequest> ThreadPooling::ppPoolRequests;
 
 ThreadPooling::ThreadPooling()
@@ -89,6 +91,19 @@ Success ThreadPooling::process()
 	switch (mState)
 	{
 	case StStart:
+
+		{
+			Guard lock(mtxBroker);
+
+			if (!mIsInternal && brokerPresent)
+			{
+				procDbgLog("thread pool running already");
+				return -1;
+			}
+
+			if (!mIsInternal)
+				brokerPresent = true;
+		}
 
 		if (mIsInternal)
 		{
@@ -165,7 +180,7 @@ Success ThreadPooling::shutdown()
 			break;
 		}
 
-		for (i = 0; i < mCntInternals; ++i)
+		for (i = 0; i < mVecInternals.size(); ++i)
 			cancel(mVecInternals[i]);
 
 		mStateSd = StBrokerSdStart;
@@ -173,7 +188,7 @@ Success ThreadPooling::shutdown()
 		break;
 	case StBrokerSdStart:
 
-		for (i = 0; i < mCntInternals; ++i)
+		for (i = 0; i < mVecInternals.size(); ++i)
 		{
 			if (!mVecInternals[i]->shutdownDone())
 				return Pending;
