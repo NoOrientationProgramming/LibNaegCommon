@@ -85,7 +85,7 @@ It uses various system calls to handle input/output and to interact with the lau
 
 <p align="center">
   <kbd>
-    <img src="https://raw.githubusercontent.com/NoOrientationProgramming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-io.svg" style="width:400px;max-width:100%"/>
+    <img src="https://raw.githubusercontent.com/fractal-programming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-io.svg" style="width:400px;max-width:100%"/>
   </kbd>
 </p>
 
@@ -93,10 +93,10 @@ The **FileExecuting()** process allows for complete and asynchronous control ove
 
 <p align="center">
   <kbd>
-    <img src="https://raw.githubusercontent.com/NoOrientationProgramming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-fork.svg" style="width:530px; max-width:100%;"/>
+    <img src="https://raw.githubusercontent.com/fractal-programming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-fork.svg" style="width:530px; max-width:100%;"/>
   </kbd>
   <kbd style="margin-left: 10px;">
-    <img src="https://raw.githubusercontent.com/NoOrientationProgramming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-parent-child-connection.svg" style="width:300px; max-width:100%;"/>
+    <img src="https://raw.githubusercontent.com/fractal-programming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-parent-child-connection.svg" style="width:300px; max-width:100%;"/>
   </kbd>
 </p>
 
@@ -129,7 +129,7 @@ The **FileExecuting()** process allows using one of several internal data source
 
 <p align="center">
   <kbd>
-    <img src="https://raw.githubusercontent.com/NoOrientationProgramming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-sources.svg" style="width:300px;max-width:100%"/>
+    <img src="https://raw.githubusercontent.com/fractal-programming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-sources.svg" style="width:300px;max-width:100%"/>
   </kbd>
 </p>
 
@@ -182,7 +182,7 @@ When more than one command is added, the OS processes are chained together.
 
 <p align="center">
   <kbd>
-    <img src="https://raw.githubusercontent.com/NoOrientationProgramming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-pipe.svg" style="width:300px;max-width:100%"/>
+    <img src="https://raw.githubusercontent.com/fractal-programming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-pipe.svg" style="width:300px;max-width:100%"/>
   </kbd>
 </p>
 
@@ -230,7 +230,7 @@ Similar to the data source, the data sinks can also be configured. Again, there 
 
 <p align="center">
   <kbd>
-    <img src="https://raw.githubusercontent.com/NoOrientationProgramming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-sinks.svg" style="width:400px;max-width:100%"/>
+    <img src="https://raw.githubusercontent.com/fractal-programming/LibNaegCommon/refs/heads/main/doc/system/FileExecuting/fe-sinks.svg" style="width:400px;max-width:100%"/>
   </kbd>
 </p>
 
@@ -508,9 +508,9 @@ The base structure for all software systems.
 ```
 License               MIT
 Required              Yes
-Project Page          https://github.com/NoOrientationProgramming
-Documentation         https://github.com/NoOrientationProgramming/SystemCore
-Sources               https://github.com/NoOrientationProgramming/SystemCore
+Project Page          https://github.com/fractal-programming
+Documentation         https://github.com/fractal-programming/SystemCore
+Sources               https://github.com/fractal-programming/SystemCore
 ```
 
 ## SEE ALSO

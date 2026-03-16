@@ -287,9 +287,9 @@ The base structure for all software systems.
 ```
 License               MIT
 Required              Yes
-Project Page          https://github.com/NoOrientationProgramming
-Documentation         https://github.com/NoOrientationProgramming/SystemCore
-Sources               https://github.com/NoOrientationProgramming/SystemCore
+Project Page          https://github.com/fractal-programming
+Documentation         https://github.com/fractal-programming/SystemCore
+Sources               https://github.com/fractal-programming/SystemCore
 ```
 
 ### DnsResolving()
@@ -299,9 +299,9 @@ Process for DNS resolution.
 ```
 License               GPLv3
 Required              If c-ares is used
-Project Page          https://github.com/NoOrientationProgramming
-Documentation         https://github.com/NoOrientationProgramming/LibNaegCommon
-Sources               https://github.com/NoOrientationProgramming/LibNaegCommon
+Project Page          https://github.com/fractal-programming
+Documentation         https://github.com/fractal-programming/LibNaegCommon
+Sources               https://github.com/fractal-programming/LibNaegCommon
 ```
 
 ### LibDspc
@@ -311,9 +311,9 @@ Sources               https://github.com/NoOrientationProgramming/LibNaegCommon
 ```
 License               GPLv3
 Required              Yes
-Project Page          https://github.com/NoOrientationProgramming
-Documentation         https://github.com/NoOrientationProgramming/LibNaegCommon
-Sources               https://github.com/NoOrientationProgramming/LibNaegCommon
+Project Page          https://github.com/fractal-programming
+Documentation         https://github.com/fractal-programming/LibNaegCommon
+Sources               https://github.com/fractal-programming/LibNaegCommon
 ```
 
 ### cURL
