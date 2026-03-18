@@ -7,6 +7,10 @@
 Official processes based on the `SystemCore` of  [Fractal Programming](https://github.com/fractal-programming).
 The use of this repository is entirely optional.
 
+Built with **Fractal System Architecture (FSA)**
+
+Learn more: https://github.com/fractal-programming
+
 ## How to add to your project
 
 `git submodule add https://github.com/fractal-programming/LibNaegCommon.git`
