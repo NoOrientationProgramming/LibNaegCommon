@@ -703,6 +703,7 @@ void urlToParts(const string &url,
 
 // Strings
 
+#if defined(__unix__)
 void strPadCutTo(string &str, size_t width, bool dots, bool padLeft)
 {
 	wstring_convert<codecvt_utf8<char32_t>, char32_t> converter;
@@ -731,6 +732,7 @@ void strPadCutTo(string &str, size_t width, bool dots, bool padLeft)
 
 	str = converter.to_bytes(u32str);
 }
+#endif
 
 void strToVecStr(const string &str, VecStr &vStr, char delim)
 {

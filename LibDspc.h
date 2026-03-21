@@ -118,7 +118,9 @@ void urlToParts(const std::string &url,
 				std::string &queries);
 
 // Strings
+#if defined(__unix__)
 void strPadCutTo(std::string &str, size_t width, bool dots = false, bool padLeft = false);
+#endif
 void strToVecStr(const std::string &str, VecStr &vStr, char delim = '\n');
 void resToVecStr(const std::string &nameRes, VecStr &vStr);
 std::string trim(const std::string &str);
