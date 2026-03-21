@@ -72,8 +72,8 @@ string tpToStr(const TimePoint &tp, const char *pFmt)
 {
 	time_t tt_t = system_clock::to_time_t(tp);
 #if defined(_WIN32)
-	const tm vtm_t;
-	const tm *tm_t = &vtm_t;
+	tm vtm_t;
+	tm *tm_t = &vtm_t;
 
 	errno_t numErr = ::localtime_s(tm_t, &tt_t);
 	if (numErr)
