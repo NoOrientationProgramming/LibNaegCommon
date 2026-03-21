@@ -75,7 +75,7 @@ string tpToStr(const TimePoint &tp, const char *pFmt)
 	const tm vtm_t;
 	const tm *tm_t = &vtm_t;
 
-	errno_t numErr = ::localtime_s(&tt_t, tm_t);
+	errno_t numErr = ::localtime_s(tm_t, &tt_t);
 	if (numErr)
 		return "";
 #else
