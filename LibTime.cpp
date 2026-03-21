@@ -139,7 +139,7 @@ TimePoint utcToCet(const TimePoint &tpUtc)
 
 	errno_t numErr = ::localtime_s(tm_t, &tt_t);
 	if (numErr)
-		return "";
+		return tpUtc;
 #else
 	const tm *tm_t = ::localtime(&tt_t);
 #endif
