@@ -71,7 +71,16 @@ string nowToStr(const char *pFmt)
 string tpToStr(const TimePoint &tp, const char *pFmt)
 {
 	time_t tt_t = system_clock::to_time_t(tp);
+#if defined(_WIN32)
+	const tm vtm_t;
+	const tm *tm_t = &vtm_t;
+
+	errno_t numErr = ::localtime_s(&tt_t, tm_t);
+	if (numErr)
+		return "";
+#else
 	const tm *tm_t = ::localtime(&tt_t);
+#endif
 	char timeBuf[32];
 	size_t res;
 
