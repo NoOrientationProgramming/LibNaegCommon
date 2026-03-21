@@ -52,6 +52,7 @@
 #endif
 
 #include "Processing.h"
+#include "TcpTransfering.h"
 #include "Res.h"
 #include "LibTime.h"
 #include "LibFilesys.h"
@@ -107,7 +108,7 @@ void caresGlobalDeInit();
 // Internet
 bool isValidEmail(const std::string &mail);
 int typeIp(const std::string &ip);
-std::string remoteAddr(int socketFd);
+std::string remoteAddr(SOCKET socketFd);
 std::string urlToHost(const std::string &url);
 void urlToParts(const std::string &url,
 				std::string &protocol,

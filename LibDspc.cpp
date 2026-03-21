@@ -575,17 +575,44 @@ int typeIp(const string &ip)
 	return AF_UNSPEC;
 }
 
-string remoteAddr(int socketFd)
+string remoteAddr(SOCKET socketFd)
 {
-	struct sockaddr_in addr;
+	char buf[INET6_ADDRSTRLEN];
+	const char *pRes = NULL;
+	int res;
+
+	struct sockaddr_storage addr;
 	socklen_t addrLen;
+	string strAddr;
 
 	memset(&addr, 0, sizeof(addr));
 
 	addrLen = sizeof(addr);
-	::getpeername(socketFd, (struct sockaddr*)&addr, &addrLen);
+	res = ::getpeername(socketFd, (struct sockaddr*)&addr, &addrLen);
+#ifdef _WIN32
+	if (res == SOCKET_ERROR)
+		return strAddr;
+#else
+	if (res == -1)
+		return strAddr;
+#endif
+	if (addr.ss_family == AF_INET)
+	{
+		struct sockaddr_in *pAddr = (struct sockaddr_in *)&addr;
+		pRes = ::inet_ntop(AF_INET, &pAddr->sin_addr, buf, sizeof(buf));
+	}
+	else if (addr.ss_family == AF_INET6)
+	{
+		struct sockaddr_in6 *pAddr = (struct sockaddr_in6 *)&addr;
+		pRes = ::inet_ntop(AF_INET6, &pAddr->sin6_addr, buf, sizeof(buf));
+	}
 
-	return ::inet_ntoa(addr.sin_addr);
+	if (!pRes)
+		return strAddr;
+
+	strAddr = string(buf);
+
+	return strAddr;
 }
 
 string urlToHost(const string &url)
