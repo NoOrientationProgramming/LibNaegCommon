@@ -79,9 +79,9 @@ bool dirCreate(const std::string &path, mode_t mode = (S_IRWXU | S_IRGRP | S_IXG
 bool dirCreate(const std::string &path, int mode = 0);
 #endif
 
+#if defined(__unix__)
 bool strToFile(const std::string &str, const std::string &path);
 
-#if defined(__unix__)
 bool lockDirDefaultOpen(const std::string &dirBase);
 void lockDirDefaultClose();
 Success sysFlagsIntLock(void *pRequester, const char *filename, const char *function, const int line, UserLocks *pLocks, ...);

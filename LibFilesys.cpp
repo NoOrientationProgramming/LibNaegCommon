@@ -330,7 +330,7 @@ bool dirCreate(const string &path, int mode)
 			continue;
 #if defined(_WIN32)
 		(void)mode;
-		res = mkdir(node.c_str());
+		res = _mkdir(node.c_str());
 #else
 		res = mkdir(node.c_str(), mode);
 #endif
@@ -341,6 +341,7 @@ bool dirCreate(const string &path, int mode)
 	return true;
 }
 
+#if defined(__unix__)
 bool strToFile(const string &str, const string &path)
 {
 	FILE *pFile = fopen(path.c_str(), "w");
@@ -361,7 +362,6 @@ bool strToFile(const string &str, const string &path)
 	return true;
 }
 
-#if defined(__unix__)
 /*
 Literature
 - https://linux.die.net/man/2/open
