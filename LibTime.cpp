@@ -132,8 +132,17 @@ size_t tpDiffMs(const TimePoint &tpEnd, const TimePoint &tpStart)
 
 TimePoint utcToCet(const TimePoint &tpUtc)
 {
-	time_t tTt = system_clock::to_time_t(tpUtc);
-	tm tTm = *localtime(&tTt);
-	return tpUtc + hours(tTm.tm_isdst ? 2 : 1);
+	time_t tt_t = system_clock::to_time_t(tpUtc);
+#if defined(_WIN32)
+	tm vtm_t;
+	tm *tm_t = &vtm_t;
+
+	errno_t numErr = ::localtime_s(tm_t, &tt_t);
+	if (numErr)
+		return "";
+#else
+	const tm *tm_t = ::localtime(&tt_t);
+#endif
+	return tpUtc + hours(tm_t->tm_isdst ? 2 : 1);
 }
 
