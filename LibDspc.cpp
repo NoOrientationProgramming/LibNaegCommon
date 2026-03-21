@@ -107,10 +107,10 @@ void hexDump(const void *pData, size_t len,
 		return;
 
 	const char *pByte = (const char *)pData;
-	uint32_t addressAbs = 0;
+	const char *pLine;
 	char bufLine[256];
 	char *pBuf, *pBufEnd;
-	const char *pLine;
+	size_t addressAbs = 0;
 	size_t lenPrinted;
 	size_t numBytesPerLine = colWidth;
 	size_t i;
@@ -133,7 +133,7 @@ void hexDump(const void *pData, size_t len,
 		pLine = pByte;
 		lenPrinted = 0;
 
-		dInfo("%08" PRIx32, addressAbs);
+		dInfo("%08zx", addressAbs);
 
 		for (i = 0; i < numBytesPerLine; ++i)
 		{
@@ -185,8 +185,8 @@ size_t hexDumpPrint(char *pBuf, char *pBufEnd,
 
 	const char *pBufStart = pBuf;
 	const char *pByte = (const char *)pData;
-	uint32_t addressAbs = 0;
 	const char *pLine;
+	size_t addressAbs = 0;
 	size_t lenPrinted;
 	size_t numBytesPerLine = colWidth;
 	size_t i;
@@ -198,7 +198,7 @@ size_t hexDumpPrint(char *pBuf, char *pBufEnd,
 		pLine = pByte;
 		lenPrinted = 0;
 
-		dInfo("%08" PRIx32, addressAbs);
+		dInfo("%08zx", addressAbs);
 
 		for (i = 0; i < numBytesPerLine; ++i)
 		{
