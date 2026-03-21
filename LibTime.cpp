@@ -35,7 +35,7 @@ uint32_t millis()
 {
 	auto now = steady_clock::now();
 	auto nowMs = time_point_cast<milliseconds>(now);
-	return nowMs.time_since_epoch().count();
+	return (uint32_t)nowMs.time_since_epoch().count();
 }
 
 string nowUtc()
