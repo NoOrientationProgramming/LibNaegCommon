@@ -66,8 +66,8 @@ void fdClose(int &fd, bool deInit = true);
 
 bool fileExists(const std::string &path);
 bool fileCreate(const std::string &path);
-void filesStdClose();
 #endif
+void filesStdClose();
 
 bool fileNonBlockingSet(int fd);
 bool fileCopy(const std::string &pathSrc, const std::string &pathDst);

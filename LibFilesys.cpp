@@ -237,14 +237,16 @@ bool fileCreate(const string &path)
 
 	return true;
 }
+#endif
 
 void filesStdClose()
 {
+#if defined(__unix__)
 	fclose(stdin);
 	fclose(stdout);
 	fclose(stderr);
-}
 #endif
+}
 
 bool fileNonBlockingSet(int fd)
 {
