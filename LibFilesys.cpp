@@ -213,7 +213,6 @@ void fdClose(int &fd, bool deInit)
 
 	fd = -1;
 }
-#endif
 
 bool fileExists(const string &path)
 {
@@ -245,6 +244,7 @@ void filesStdClose()
 	fclose(stdout);
 	fclose(stderr);
 }
+#endif
 
 bool fileNonBlockingSet(int fd)
 {
